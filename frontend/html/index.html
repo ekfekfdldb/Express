@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="kr">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            rel="stylesheet"
+            href="../css/index.css"
+            crossorigin="anonymous"
+        />
+        <title>STARTUPCODE Edu Community</title>
+    </head>
+    <body>
+        <section class="wrap">
+            <!-- 차트 영역 (고정) -->
+            <div class="chart-wrapper">
+                <div class="chart" id="chart">
+                    <select id="marketSelect">
+                        <option value="KRW-BTC">비트코인</option>
+                        <option value="KRW-ETH">이더리움</option>
+                    </select>
+                    <select id="chartTypeSelect">
+                        <option value="tick">틱</option>
+                        <option value="minute">1분봉</option>
+                        <option value="day">일봉</option>
+                        <option value="week">주봉</option>
+                    </select>
+                    <canvas id="chartCanvas"></canvas>
+                </div>
+            </div>
+
+            <!-- 게시판 영역 (스크롤) -->
+            <div class="board-scroll">
+                <div class="board-container">
+                    <div class="write">
+                        <h2>안녕하세요,<br />커뮤니티 <b>게시판</b> 입니다.</h2>
+                        <div class="write-header">
+                            <span id="balanceText">보유 토큰: </span>
+                            <a href="./board-write.html" id="writeLink"
+                                >게시글 작성</a
+                            >
+                        </div>
+                    </div>
+                    <section class="boardList"></section>
+                </div>
+            </div>
+        </section>
+        <div class="background"></div>
+    </body>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- 금융 차트 플러그인 (UMD) -->
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-chart-financial@0.2.1/dist/chartjs-chart-financial.min.js"></script>
+
+    <!-- 시간축 어댑터 (UMD) -->
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns@3.0.0/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
+
+    <script type="module" src="../js/chart.js"></script>
+    <script type="module" src="../js/index.js"></script>
+</html>
